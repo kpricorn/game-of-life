@@ -10,7 +10,11 @@ define ["lodash"], (_) ->
     allDead: -> Object.keys(@field).length == 0
     play: => @turn() until @allDead()
     livingNeighbours: (x, y) => _.select(@neighboursCoords(x, y), ([x, y]) => @field["#{x}/#{y}"]?)
-    isAlive: (x, y) -> 3 < @livingNeighbours(x, y).length <= 4
+    isAlive: (x, y) =>
+      if @field["#{x}/#{y}"]?
+        1 < @livingNeighbours(x, y).length < 4
+      else
+        @livingNeighbours(x, y).length == 3
     turn: => @field = _.object(_.select(@candidates(), ([x, y]) => @isAlive(x, y)).map ([x, y]) => ["#{x}/#{y}", [x, y]])
 
   Game: Game

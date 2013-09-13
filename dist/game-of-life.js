@@ -22,6 +22,7 @@
       function Game(field) {
         this.field = field != null ? field : {};
         this.turn = __bind(this.turn, this);
+        this.isAlive = __bind(this.isAlive, this);
         this.livingNeighbours = __bind(this.livingNeighbours, this);
         this.play = __bind(this.play, this);
         this.neighboursCoords = __bind(this.neighboursCoords, this);
@@ -83,7 +84,11 @@
 
       Game.prototype.isAlive = function(x, y) {
         var _ref;
-        return (3 < (_ref = this.livingNeighbours(x, y).length) && _ref <= 4);
+        if (this.field["" + x + "/" + y] != null) {
+          return (1 < (_ref = this.livingNeighbours(x, y).length) && _ref < 4);
+        } else {
+          return this.livingNeighbours(x, y).length === 3;
+        }
       };
 
       Game.prototype.turn = function() {
