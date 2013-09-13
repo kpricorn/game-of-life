@@ -1,6 +1,6 @@
 module.exports = (grunt) ->
   grunt.initConfig
-    pkg: grunt.file.readJSON "package.json"
+    pkg: grunt.file.readJSON 'package.json'
     coffee:
       compile:
         options:
@@ -13,10 +13,30 @@ module.exports = (grunt) ->
       options:
         coffee: true
       run:
-        spec: "spec"
+        spec: 'spec'
       executable: './node_modules/.bin/jasmine-node'
+
+    concat:
+      dist:
+        src: ['lib/**/*.js']
+        dest: 'dist/<%= pkg.name %>.js'
+
+    uglify:
+      options:
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      dist:
+        files:
+          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+
+    release:
+      options:
+        npm: false
+        npmtag: false
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-jasmine-node'
+  grunt.loadNpmTasks 'grunt-release'
+  grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
 
-  grunt.registerTask 'default', ['coffee']
+  grunt.registerTask 'default', ['coffee', 'jasmine-node']
