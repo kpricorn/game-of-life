@@ -29,6 +29,18 @@
         this.candidates = __bind(this.candidates, this);
       }
 
+      Game.prototype.get = function(x, y) {
+        return this.field["" + x + "/" + y];
+      };
+
+      Game.prototype.set = function(x, y) {
+        return this.field[this.toInternal(x, y)[0]] = this.toInternal(x, y)[1];
+      };
+
+      Game.prototype.toInternal = function(x, y) {
+        return ["" + x + "/" + y, [x, y]];
+      };
+
       Game.prototype.cells = function() {
         var _this = this;
         return Object.keys(this.field).map(function(k) {
@@ -78,14 +90,14 @@
         return _.select(this.neighboursCoords(x, y), function(_arg) {
           var x, y;
           x = _arg[0], y = _arg[1];
-          return _this.field["" + x + "/" + y] != null;
+          return _this.get(x, y) != null;
         });
       };
 
       Game.prototype.isAlive = function(x, y) {
         var _ref;
-        if (this.field["" + x + "/" + y] != null) {
-          return (1 < (_ref = this.livingNeighbours(x, y).length) && _ref < 4);
+        if (this.get(x, y) != null) {
+          return (1 < (_ref = this.livingNeighbours(x, y).length - 1) && _ref < 4);
         } else {
           return this.livingNeighbours(x, y).length === 3;
         }
@@ -100,7 +112,7 @@
         }).map(function(_arg) {
           var x, y;
           x = _arg[0], y = _arg[1];
-          return ["" + x + "/" + y, [x, y]];
+          return _this.toInternal(x, y);
         }));
       };
 

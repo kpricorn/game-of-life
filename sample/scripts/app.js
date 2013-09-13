@@ -10,21 +10,21 @@ define(['lodash', 'paper', 'game-of-life'], function(_, paper, Game) {
   //game.field['0/2'] = [0, 2];
 
   // Beacon
-  game.field['0/0'] = [0, 0];
-  game.field['0/1'] = [0, 1];
-  game.field['1/0'] = [1, 0];
-  game.field['1/1'] = [1, 1];
-  game.field['2/2'] = [2, 2];
-  game.field['2/3'] = [2, 3];
-  game.field['3/2'] = [3, 2];
-  game.field['3/3'] = [3, 3];
-
-  // glider
   //game.field['0/0'] = [0, 0];
+  //game.field['0/1'] = [0, 1];
   //game.field['1/0'] = [1, 0];
   //game.field['1/1'] = [1, 1];
-  //game.field['1/-1'] = [1, -1];
-  //game.field['2/-1'] = [2, -1];
+  //game.field['2/2'] = [2, 2];
+  //game.field['2/3'] = [2, 3];
+  //game.field['3/2'] = [3, 2];
+  //game.field['3/3'] = [3, 3];
+
+  // glider
+  game.field['0/0'] = [0, 0];
+  game.field['1/0'] = [1, 0];
+  game.field['1/1'] = [1, 1];
+  game.field['1/-1'] = [1, -1];
+  game.field['2/-1'] = [2, -1];
 
   xOffset = canvas.width / 2;
   yOffset = canvas.height / 2;
@@ -47,7 +47,7 @@ define(['lodash', 'paper', 'game-of-life'], function(_, paper, Game) {
     });
     paper.view.draw();
     game.turn();
-    setTimeout(tick, 500)
+    setTimeout(tick, 1)
   };
 
   tick();
