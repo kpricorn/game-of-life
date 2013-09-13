@@ -1,4 +1,4 @@
-root = global || window
+root = if global? then global else window
 root._ = require('lodash')
 
 {Game} = require '../lib/gol'
