@@ -1,5 +1,5 @@
 (function() {
-  var NEIGHBOUR_MATRIX, x, y,
+  var Game, NEIGHBOUR_MATRIX, x, y,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   NEIGHBOUR_MATRIX = _.flatten((function() {
@@ -18,7 +18,7 @@
     return _results;
   })(), true);
 
-  exports.Game = (function() {
+  Game = (function() {
     function Game(field) {
       this.field = field != null ? field : {};
       this.turn = __bind(this.turn, this);

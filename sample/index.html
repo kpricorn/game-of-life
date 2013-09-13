@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="bower_components/paper/dist/paper-full.js"></script>
-<script type="text/javascript" src="bower_components/lodash/dist/lodash.compat.js"></script>
-<script type="text/javascript" src="bower_components/game-of-life/dist/game-of-life.js"></script>
-<script type="text/paperscript" canvas="gol">
-  // Create a Paper.js Path to draw a line into it:
-  var path = new Path();
-  // Give the stroke a color
-  path.strokeColor = 'black';
-  var start = new Point(100, 100);
-  // Move to start and draw a line from there
-  path.moveTo(start);
-  // Note the plus operator on Point objects.
-  // PaperScript does that for us, and much more!
-  path.lineTo(start + [ 100, -50 ]);
-</script>
+  <script data-main="scripts/main.js" src="scripts/vendor/requirejs/require.js"></script>
 </head>
-<body>
-  <canvas id="gol" resize></canvas>
+<body style="padding: 0 10%;">
+  <canvas id="gol" style="display: block; margin: 0 auto; background-color: #EEE;" resize></canvas>
 </body>
 </html>

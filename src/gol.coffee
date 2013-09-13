@@ -1,6 +1,6 @@
 NEIGHBOUR_MATRIX = _.flatten((([x, y] for y in [-1..1]) for x in [-1..1]), true)
 
-class exports.Game
+class Game
   constructor: (@field = {}) ->
   cells: -> Object.keys(@field).map (k) => @field[k]
   candidates: => _.flatten(@neighboursCoords(cx, cy) for [cx, cy] in @cells(), true)

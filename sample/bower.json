@@ -16,8 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "paper": "paperjs/paper.js",
-    "lodash": "lodash/lodash",
-    "game-of-life": "kpricorn/game-of-life"
+    "paper": null,
+    "lodash": null,
+    "game-of-life": "kpricorn/game-of-life",
+    "requirejs": null
   }
 }
