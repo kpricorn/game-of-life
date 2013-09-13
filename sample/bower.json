@@ -1,0 +1,23 @@
+{
+  "name": "game-of-life",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kpricorn/game-of-life",
+  "authors": [
+    "Sebastian de Castelberg <sebu@kpricorn.org>"
+  ],
+  "description": "Game of life sample",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper": "paperjs/paper.js",
+    "lodash": "lodash/lodash",
+    "game-of-life": "kpricorn/game-of-life"
+  }
+}

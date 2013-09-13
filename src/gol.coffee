@@ -1,4 +1,3 @@
-_ = require('lodash')
 NEIGHBOUR_MATRIX = _.flatten((([x, y] for y in [-1..1]) for x in [-1..1]), true)
 class exports.Game
   constructor: (@field = {}) ->

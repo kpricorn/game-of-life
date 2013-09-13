@@ -1,8 +1,6 @@
 (function() {
-  var NEIGHBOUR_MATRIX, x, y, _,
+  var NEIGHBOUR_MATRIX, x, y,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-
-  _ = require('lodash');
 
   NEIGHBOUR_MATRIX = _.flatten((function() {
     var _i, _results;
