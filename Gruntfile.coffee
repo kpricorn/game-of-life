@@ -9,4 +9,14 @@ module.exports = (grunt) ->
         files:
           'lib/gol.js': ['src/*.coffee']
 
+    'jasmine-node':
+      options:
+        coffee: true
+      run:
+        spec: "spec"
+      executable: './node_modules/.bin/jasmine-node'
+
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-jasmine-node'
+
+  grunt.registerTask 'default', ['coffee']
