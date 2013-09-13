@@ -1,4 +1,5 @@
-define(['lodash', 'paper'], function(_, Paper) {
+define(['lodash', 'paper', 'game-of-life'], function(_, Paper, Game) {
+  window.Game = Game;
   var canvas = document.getElementById('gol');
   // Create an empty project and a view for the canvas:
   paper.setup(canvas);

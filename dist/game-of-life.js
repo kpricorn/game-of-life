@@ -1,7 +1,8 @@
 (function() {
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  define(function(_) {
+  define(["lodash"], function(_) {
+    debugger;
     var Game, NEIGHBOUR_MATRIX, x, y;
     NEIGHBOUR_MATRIX = _.flatten((function() {
       var _i, _results;
