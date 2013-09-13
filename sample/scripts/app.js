@@ -1,18 +1,47 @@
-define(['lodash', 'paper', 'game-of-life'], function(_, Paper, Game) {
-  window.Game = Game;
-  var canvas = document.getElementById('gol');
-  // Create an empty project and a view for the canvas:
+define(['lodash', 'paper', 'game-of-life'], function(_, paper, Game) {
+  window.Game = Game.Game;
+  window.paper = paper
+  window.canvas = document.getElementById('gol');
   paper.setup(canvas);
-  // Create a Paper.js Path to draw a line into it:
-  var path = new paper.Path();
-  // Give the stroke a color
-  path.strokeColor = 'black';
-  var start = new paper.Point(100, 100);
-  // Move to start and draw a line from there
-  path.moveTo(start);
-  // Note that the plus operator on Point objects does not work
-  // in JavaScript. Instead, we need to call the add() function:
-  path.lineTo(start.add([ 200, -50 ]));
-  // Draw the view now:
-  paper.view.draw();
+
+  var game = new Game.Game();
+  //game.field['0/0'] = [0, 0];
+  //game.field['0/1'] = [0, 1];
+  //game.field['0/2'] = [0, 2];
+
+  game.field['0/0'] = [0, 0];
+  game.field['0/1'] = [0, 1];
+  game.field['1/0'] = [1, 0];
+  game.field['1/1'] = [1, 1];
+
+  game.field['2/2'] = [2, 2];
+  game.field['2/3'] = [2, 3];
+  game.field['3/2'] = [3, 2];
+  game.field['3/3'] = [3, 3];
+
+  xOffset = canvas.width / 2;
+  yOffset = canvas.height / 2;
+  var rects = [];
+
+  var tick = function() {
+    var topLeft;
+    var rect;
+    var x;
+    var y;
+    var rect;
+    _.invoke(rects, 'remove');
+    rects = _.map(game.cells(), function(c) {
+      x = c[0] + xOffset;
+      y = c[1] + yOffset;
+      topLeft = new paper.Point(x, y);
+      rect = new paper.Path.Rectangle(topLeft, [1, 1]);
+      rect.fillColor = 'red';
+      return rect;
+    });
+    paper.view.draw();
+    game.turn();
+    setTimeout(tick, 2000)
+  };
+
+  tick();
 });
