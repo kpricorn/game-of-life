@@ -1,3 +1,6 @@
+root = global || window
+root._ = require('lodash')
+
 {Game} = require '../lib/gol'
 
 describe 'game of life', ->

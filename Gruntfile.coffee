@@ -40,3 +40,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
 
   grunt.registerTask 'default', ['coffee', 'jasmine-node']
+  grunt.registerTask 'prepare', ['coffee', 'concat', 'uglify']
