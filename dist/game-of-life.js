@@ -83,7 +83,7 @@
 
       Game.prototype.isAlive = function(x, y) {
         var _ref;
-        return (3 <= (_ref = this.livingNeighbours(x, y).length) && _ref < 4);
+        return (3 < (_ref = this.livingNeighbours(x, y).length) && _ref <= 4);
       };
 
       Game.prototype.turn = function() {
