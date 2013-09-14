@@ -16,9 +16,12 @@
     "tests"
   ],
   "dependencies": {
-    "paper": null,
     "lodash": null,
+    "jquery": null,
+    "paper": null,
+    "underscore-amd": null,
     "game-of-life": "kpricorn/game-of-life",
+    "backbone-amd": null,
     "requirejs": null
   }
 }
