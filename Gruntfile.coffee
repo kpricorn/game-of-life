@@ -5,7 +5,6 @@ module.exports = (grunt) ->
       compile:
         options:
           join: true
-          sourceMap: true
         files:
           'lib/gol.js': ['src/*.coffee']
 

@@ -1,0 +1,25 @@
+{
+  "name": "game-of-life",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kpricorn/game-of-life",
+  "authors": [
+    "Sebastian de Castelberg <sebu@kpricorn.org>"
+  ],
+  "description": "Game of life",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "game-of-life": "kpricorn/game-of-life",
+    "lodash": null,
+    "jquery": null,
+    "underscore-amd": null,
+    "paper": null,
+    "backbone-amd": null,
+    "requirejs": null
+  },
+  "exportsOverride": {
+    "underscore-amd": { "underscore": "underscore.js" },
+    "backbone-amd": { "backbone": "backbone.js" },
+    "requirejs": { "requirejs": "require.js" }
+  }
+}

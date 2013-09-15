@@ -125,7 +125,3 @@
   });
 
 }).call(this);
-
-/*
-//@ sourceMappingURL=gol.js.map
-*/
