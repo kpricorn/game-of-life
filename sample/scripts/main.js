@@ -2,12 +2,12 @@ require.config({
   baseUrl: './scripts',
   urlArgs: "bust=" + (new Date()).getTime(),
   paths: {
-    lodash: 'vendor/lodash/dist/lodash.compat',
+    lodash: 'vendor/lodash/lodash.compat',
     jquery: 'vendor/jquery/jquery',
-    underscore: 'vendor/underscore-amd/underscore',
-    paper: 'vendor/paper/dist/paper',
+    underscore: 'vendor/underscore/underscore-amd/underscore',
+    paper: 'vendor/paper/paper',
     'game-of-life': 'vendor/game-of-life/dist/game-of-life',
-    backbone: 'vendor/backbone-amd/backbone'
+    backbone: 'vendor/backbone/backbone-amd/backbone'
   }
 });
 

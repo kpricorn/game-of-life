@@ -33,11 +33,19 @@ module.exports = (grunt) ->
         npm: false
         npmtag: false
 
+    bower:
+      install:
+        options:
+          targetDir: 'sample/scripts/vendor'
+          cleanup: true
+          verbose: true
+
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-jasmine-node'
   grunt.loadNpmTasks 'grunt-release'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-bower-task'
 
   grunt.registerTask 'default', ['coffee', 'jasmine-node']
   grunt.registerTask 'prepare', ['coffee', 'concat', 'uglify']

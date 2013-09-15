@@ -1,27 +1,14 @@
 {
-  "name": "game-of-life",
+  "name": "game-of-life-sample",
   "version": "0.0.1",
   "homepage": "https://github.com/kpricorn/game-of-life",
   "authors": [
     "Sebastian de Castelberg <sebu@kpricorn.org>"
   ],
-  "description": "Game of life sample",
+  "description": "Game of life sample page",
   "license": "MIT",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "lodash": null,
-    "jquery": null,
-    "paper": null,
-    "underscore-amd": null,
-    "game-of-life": "kpricorn/game-of-life",
-    "backbone-amd": null,
-    "requirejs": null
+    "game-of-life": "kpricorn/game-of-life"
   }
 }
