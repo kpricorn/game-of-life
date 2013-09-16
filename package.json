@@ -1,6 +1,6 @@
 {
   "name": "game-of-life",
-  "version": "0.0.13",
+  "version": "0.1.0",
   "description": "Conway's Game of Life",
   "main": "dist/game-of-life.js",
   "repository": {
