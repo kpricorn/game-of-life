@@ -11,6 +11,7 @@ module.exports = (grunt) ->
     'jasmine-node':
       options:
         coffee: true
+        runWithRequireJs: true
       run:
         spec: 'spec'
       executable: './node_modules/.bin/jasmine-node'

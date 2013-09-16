@@ -1,8 +1,7 @@
 define ["lodash"], (_) ->
 
-  NEIGHBOUR_MATRIX = _.flatten((([x, y] for y in [-1..1]) for x in [-1..1]), true)
-
   class Game
+    NEIGHBOUR_MATRIX: _.flatten((([x, y] for y in [-1..1]) for x in [-1..1]), true)
     constructor: (@field = {}) ->
     get: (x, y) -> @field["#{x}/#{y}"]
     set: (x, y) -> @field[@toInternal(x, y)[0]] = @toInternal(x, y)[1]
@@ -12,7 +11,7 @@ define ["lodash"], (_) ->
     candidates: =>
       _.flatten(@neighboursCoords(cx, cy) for [cx, cy] in @cells(), true)
     neighboursCoords: (x, y) =>
-      ([x + tx, y + ty] for [tx, ty] in NEIGHBOUR_MATRIX)
+      ([x + tx, y + ty] for [tx, ty] in @NEIGHBOUR_MATRIX)
     allDead: -> Object.keys(@field).length == 0
     play: => @turn() until @allDead()
     livingNeighbours: (x, y) =>

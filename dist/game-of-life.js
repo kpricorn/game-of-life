@@ -2,23 +2,26 @@
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   define(["lodash"], function(_) {
-    var Game, NEIGHBOUR_MATRIX, x, y;
-    NEIGHBOUR_MATRIX = _.flatten((function() {
-      var _i, _results;
-      _results = [];
-      for (x = _i = -1; _i <= 1; x = ++_i) {
-        _results.push((function() {
-          var _j, _results1;
-          _results1 = [];
-          for (y = _j = -1; _j <= 1; y = ++_j) {
-            _results1.push([x, y]);
-          }
-          return _results1;
-        })());
-      }
-      return _results;
-    })(), true);
+    var Game;
     Game = (function() {
+      var x, y;
+
+      Game.prototype.NEIGHBOUR_MATRIX = _.flatten((function() {
+        var _i, _results;
+        _results = [];
+        for (x = _i = -1; _i <= 1; x = ++_i) {
+          _results.push((function() {
+            var _j, _results1;
+            _results1 = [];
+            for (y = _j = -1; _j <= 1; y = ++_j) {
+              _results1.push([x, y]);
+            }
+            return _results1;
+          })());
+        }
+        return _results;
+      })(), true);
+
       function Game(field) {
         this.field = field != null ? field : {};
         this.turn = __bind(this.turn, this);
@@ -63,10 +66,11 @@
       };
 
       Game.prototype.neighboursCoords = function(x, y) {
-        var tx, ty, _i, _len, _ref, _results;
+        var tx, ty, _i, _len, _ref, _ref1, _results;
+        _ref = this.NEIGHBOUR_MATRIX;
         _results = [];
-        for (_i = 0, _len = NEIGHBOUR_MATRIX.length; _i < _len; _i++) {
-          _ref = NEIGHBOUR_MATRIX[_i], tx = _ref[0], ty = _ref[1];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          _ref1 = _ref[_i], tx = _ref1[0], ty = _ref1[1];
           _results.push([x + tx, y + ty]);
         }
         return _results;
